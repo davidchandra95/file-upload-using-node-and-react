@@ -42,6 +42,9 @@ class Main extends React.Component {
          body: data,
       }).then((response) => {
          response.json().then((body) => {
+            const notif = document.querySelector('#notif');
+            notif.innerHTML = "Success upload image.";
+            notif.style.display = 'block'
             this.setState({ imageURL: `http://localhost:8000/${body.file}` });
             this.getImages()
          });
@@ -51,14 +54,14 @@ class Main extends React.Component {
    render() {
       return (
          <form action="" onSubmit={this.handleUploadImage}>
-            <div>
-               <input type="file" ref={(ref) => {this.uploadInput = ref;}}/>
+            <div className="form-group">
+               <input className="form-control" type="file" ref={(ref) => {this.uploadInput = ref;}}/>
             </div>
-            <div>
-               <input type="text" ref={(ref) => {this.fileName = ref;}} placeholder="Enter name of file" />
+            <div className="form-group">
+               <input className="form-control" type="text" ref={(ref) => {this.fileName = ref;}} placeholder="Enter name of file" />
             </div>
-            <div>
-               <button>Upload</button>
+            <div className="form-group">
+               <button className="btn btn-primary">Upload</button>
             </div>
             <ListImages images={this.state.images} />
          </form>
