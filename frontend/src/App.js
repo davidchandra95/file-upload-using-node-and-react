@@ -1,5 +1,6 @@
 import React from 'react';
 import Main from './components/Main'
+import ListImages from './components/ListImages'
 
 const App = () => (
    <div>
