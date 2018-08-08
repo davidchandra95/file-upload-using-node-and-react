@@ -46,10 +46,6 @@ class ListImages extends React.Component {
                      <img src={this.state.selectedImage} alt={this.state.fileName} />
                      <div className="caption">
                         <h4>{this.state.fileName}</h4>
-                        <p>
-                           <a className="btn btn-warning" role="button">Edit</a> 
-                           <a className="btn btn-danger" role="button">Delete</a>
-                        </p>
                      </div>
                   </div>
                </div>
